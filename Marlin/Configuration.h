@@ -1161,15 +1161,14 @@
  * following movement settings. If fewer factors are given than the
  * total number of extruders, the last value applies to the rest.
  */
-//#define DISTINCT_E_FACTORS
+#define DISTINCT_E_FACTORS
 
 /**
  * Default Axis Steps Per Unit (linear=steps/mm, rotational=steps/°)
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-//1732.80, 1612, 400, 94 }
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 802.80, 780.48, 400, 142.42 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 802.80, 780.48, 400, 142.42, 142.42 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
