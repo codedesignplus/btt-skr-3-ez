@@ -965,7 +965,7 @@
  * Z Steppers Auto-Alignment
  * Add the G34 command to align multiple Z steppers using a bed probe.
  */
-//#define Z_STEPPER_AUTO_ALIGN
+#define Z_STEPPER_AUTO_ALIGN
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   /**
    * Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
@@ -1568,7 +1568,7 @@
   #define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
     #define PLR_ENABLED_DEFAULT   true| // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
-    //#define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
+    #define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
     #define POWER_LOSS_ZRAISE       10 // (mm) Z axis raise on resume (on power loss with UPS)
     //#define POWER_LOSS_PIN         44 // Pin to detect power loss. Set to -1 to disable default pin on boards without module.
     #define POWER_LOSS_STATE     HIGH // State of pin indicating power loss

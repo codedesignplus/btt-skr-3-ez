@@ -163,7 +163,7 @@
 #define Z_DRIVER_TYPE  TMC2209
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE A4988
+#define Z2_DRIVER_TYPE TMC2209
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
@@ -401,14 +401,14 @@
  * Enable and connect the power supply to the PS_ON_PIN.
  * Specify whether the power supply is active HIGH or active LOW.
  */
-//#define PSU_CONTROL
-//#define PSU_NAME "Power Supply"
+#define PSU_CONTROL
+#define PSU_NAME "Power Supply"
 
 #if ENABLED(PSU_CONTROL)
   //#define MKS_PWC                 // Using the MKS PWC add-on
   //#define PS_OFF_CONFIRM          // Confirm dialog when power off
   //#define PS_OFF_SOUND            // Beep 1s when power off
-  #define PSU_ACTIVE_STATE LOW      // Set 'LOW' for ATX, 'HIGH' for X-Box
+  #define PSU_ACTIVE_STATE HIGH      // Set 'LOW' for ATX, 'HIGH' for X-Box
 
   //#define PSU_DEFAULT_OFF               // Keep power off until enabled directly with M80
   //#define PSU_POWERUP_DELAY      250    // (ms) Delay for the PSU to warm up to full power
@@ -1172,7 +1172,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 802.80, 780.48, 400, 142.42, 142.42 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 794.0, 790.0, 400, 142.42, 142.42 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
