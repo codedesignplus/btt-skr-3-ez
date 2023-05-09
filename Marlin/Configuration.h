@@ -657,23 +657,23 @@
 
 #if ENABLED(PIDTEMP)
   //#define PID_DEBUG             // Print PID debug data to the serial port. Use 'M303 D' to toggle activation.
-  //#define PID_PARAMS_PER_HOTEND // Use separate PID parameters for each extruder (useful for mismatched extruders)
+  #define PID_PARAMS_PER_HOTEND // Use separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with G-code: M301 E[extruder number, 0-2]
 
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify up to one value per hotend here, according to your setup.
     // If there are fewer values, the last one applies to the remaining hotends.
-    #define DEFAULT_Kp_LIST {  22.20,  22.20 }
-    #define DEFAULT_Ki_LIST {   1.08,   1.08 }
-    #define DEFAULT_Kd_LIST { 114.00, 114.00 }
+    #define DEFAULT_Kp_LIST {  38.5028,  43.6911 }
+    #define DEFAULT_Ki_LIST {   3.1457,   4.6678 }
+    #define DEFAULT_Kd_LIST { 117.8185, 102.2371 }
   #else
     // #define DEFAULT_Kp  22.20
     // #define DEFAULT_Ki   1.08
     // #define DEFAULT_Kd 114.00
 
-    #define DEFAULT_Kp 21.3736
-    #define DEFAULT_Ki 1.5716
-    #define DEFAULT_Kd 72.6701
+    // #define DEFAULT_Kp 21.3736
+    // #define DEFAULT_Ki 1.5716
+    // #define DEFAULT_Kd 72.6701
   #endif
 #endif
 
@@ -756,9 +756,13 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 170.6789
-  #define DEFAULT_bedKi 21.9947
-  #define DEFAULT_bedKd 882.9790
+  // #define DEFAULT_bedKp 170.6789
+  // #define DEFAULT_bedKi 21.9947
+  // #define DEFAULT_bedKd 882.9790
+
+  #define DEFAULT_bedKp 184.4538
+  #define DEFAULT_bedKi 28.8209
+  #define DEFAULT_bedKd 787.0029
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1487,7 +1491,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 26.55, 9.5, -3.9 }
+#define NOZZLE_TO_PROBE_OFFSET { 26.55, 9.5, -3.10 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
